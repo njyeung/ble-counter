@@ -43,10 +43,10 @@ class Agent(dbus.service.Object):
 
         def on_properties_changed(interface, changed, invalidated):
             if interface == "org.bluez.Device1" and changed.get("Paired"):
-                def disconnect_and_cleanup():
+                def callback():
                     self._disconnect(device)
                     self.pending_devices.discard(device)
-                GLib.timeout_add_seconds(3, disconnect_and_cleanup)
+                GLib.timeout_add_seconds(3, callback)
 
         self.bus.add_signal_receiver(
             on_properties_changed,
