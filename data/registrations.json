@@ -6,6 +6,12 @@
       "name": "Nick",
       "sound_file": "oliver.wav",
       "show_location": true
+    },
+    {
+      "passkey": "123456",
+      "paired_at": "2026-02-02T23:45:00.000Z",
+      "name": "asdasda",
+      "sound_file": "chime.mp3"
     }
   ]
 }
